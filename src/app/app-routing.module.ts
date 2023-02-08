@@ -100,6 +100,9 @@ const routes: Routes = [
       title: 'Register Page'
     }
   },
+  { path: 'Home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  { path: 'Company', loadChildren: () => import('./company/company.module').then(m => m.CompanyModule) },
+  { path: 'Event', loadChildren: () => import('./event/event.module').then(m => m.EventModule) },
   {path: '**', redirectTo: 'dashboard'}
 ];
 
