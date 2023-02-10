@@ -6,6 +6,10 @@ import { HomeComponent } from './home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { EventsComponent } from './events/events.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -13,7 +17,11 @@ import { TicketComponent } from './ticket/ticket.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    TicketComponent
+    TicketComponent,
+    EventsComponent,
+    AboutComponent,
+    ContactComponent,
+    HomePageComponent
   ],
   imports: [
     CommonModule,
