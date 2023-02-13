@@ -10,6 +10,9 @@ import { EventsComponent } from './events/events.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CardEventComponent } from './events/card-event/card-event.component';
+import { ReservationEventComponent } from './events/reservation-event/reservation-event.component';
+import { DetailsEventComponent } from './events/details-event/details-event.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { HomePageComponent } from './home-page/home-page.component';
     EventsComponent,
     AboutComponent,
     ContactComponent,
-    HomePageComponent
+    HomePageComponent,
+    CardEventComponent,
+    ReservationEventComponent,
+    DetailsEventComponent
   ],
   imports: [
     CommonModule,
