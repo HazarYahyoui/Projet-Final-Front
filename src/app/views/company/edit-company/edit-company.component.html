@@ -1,1 +1,79 @@
-<p>edit-company works!</p>
+<div class="row">
+  <h1 class="text-center text-primary mt-5">Edit Company </h1>
+  <form *ngIf="editcompanyForm" [formGroup]="editcompanyForm" (ngSubmit)="editCompany()" class="offset-md-2 col-md-8 my-5">
+      <div class="row">
+          <div>
+           <div class="mb-3">
+              <label for="name" class="form-label">Company Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Type the name here" formControlName="name" [ngClass]="{'is-valid': submitted && !editcompanyForm.get('name')?.errors ,'is-invalid': submitted && editcompanyForm.get('name')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && editcompanyForm.get('name')?.hasError('required')">
+                Name is required.
+              </div>
+           </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Company Description</label>
+              <input type="text" class="form-control" id="description" placeholder="Type the description here" formControlName="description" [ngClass]="{'is-valid': submitted && !editcompanyForm.get('description')?.errors ,'is-invalid': submitted && editcompanyForm.get('description')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && editcompanyForm.get('description')?.hasError('required')">
+               Description is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Company Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Type the email here" formControlName="email" [ngClass]="{'is-valid': submitted && !editcompanyForm.get('email')?.errors ,'is-invalid': submitted && editcompanyForm.get('email')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && editcompanyForm.get('email')?.hasError('required')">
+               Email is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Type the password here" formControlName="password" [ngClass]="{'is-valid': submitted && !editcompanyForm.get('password')?.errors ,'is-invalid': submitted && editcompanyForm.get('password')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && editcompanyForm.get('password')?.hasError('required')">
+               Password is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="role" class="form-label">Role</label>
+              <input type="text" class="form-control" id="role" placeholder="Type the role here" formControlName="role" [ngClass]="{'is-valid': submitted && !editcompanyForm.get('role')?.errors ,'is-invalid': submitted && editcompanyForm.get('role')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && editcompanyForm.get('role')?.hasError('required')">
+               Role is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="photo" class="form-label">Company Photo</label>
+              <input type="file" class="form-control" id="photo" placeholder="Photo" formControlName="photo" [ngClass]="{'is-valid': submitted && !editcompanyForm.get('photo')?.errors ,'is-invalid': submitted && editcompanyForm.get('photo')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && editcompanyForm.get('photo')?.hasError('required')">
+               Photo is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="events" class="form-label">Company Events</label>
+              <input type="text" class="form-control" id="events" placeholder="Events" formControlName="events" [ngClass]="{'is-valid': submitted && !editcompanyForm.get('events')?.errors ,'is-invalid': submitted && editcompanyForm.get('events')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && editcompanyForm.get('events')?.hasError('required')">
+               Events is required.
+              </div>
+            </div>
+          </div>
+         
+      </div>
+      
+        
+      <div class="row">
+         
+          <button type="submit" class="btn btn-success">
+             <i class="fa fa-save"></i> Edit Company
+          </button>
+      </div>
+  </form>
+</div>

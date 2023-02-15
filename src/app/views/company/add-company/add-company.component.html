@@ -1,1 +1,127 @@
-<p>add-company works!</p>
+<div class="row">
+  <h1 class="text-center text-primary mt-5">Add New Company </h1>
+  <form *ngIf="addcompanyForm" [formGroup]="addcompanyForm" (ngSubmit)="addCompany()" class="offset-md-2 col-md-8 my-5">
+      <div class="row">
+          <div>
+           <div class="mb-3">
+              <label for="name" class="form-label">Company Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Type the name here" formControlName="name" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('name')?.errors ,'is-invalid': submitted && addcompanyForm.get('name')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('name')?.hasError('required')">
+                Name is required.
+              </div>
+           </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Company Description</label>
+              <input type="text" class="form-control" id="description" placeholder="Type the description here" formControlName="description" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('description')?.errors ,'is-invalid': submitted && addcompanyForm.get('description')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('description')?.hasError('required')">
+               Description is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Company Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Type the email here" formControlName="email" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('email')?.errors ,'is-invalid': submitted && addcompanyForm.get('email')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('email')?.hasError('required')">
+               Email is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Type the password here" formControlName="password" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('password')?.errors ,'is-invalid': submitted && addcompanyForm.get('password')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('password')?.hasError('required')">
+               Password is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="role" class="form-label">Role</label>
+              <input type="text" class="form-control" id="role" placeholder="Type the role here" formControlName="role" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('role')?.errors ,'is-invalid': submitted && addcompanyForm.get('role')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('role')?.hasError('required')">
+               Role is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="photo" class="form-label">Company Photo</label>
+              <input type="file" class="form-control" id="photo" placeholder="Photo" formControlName="photo" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('photo')?.errors ,'is-invalid': submitted && addcompanyForm.get('photo')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('photo')?.hasError('required')">
+               Photo is required.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <label for="events" class="form-label">Company Events</label>
+              <input type="text" class="form-control" id="events" placeholder="Events" formControlName="events" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('events')?.errors ,'is-invalid': submitted && addcompanyForm.get('events')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('events')?.hasError('required')">
+               Events is required.
+              </div>
+            </div>
+          </div>
+         
+      </div>
+      
+        
+      <div class="row">
+         
+          <button type="submit" class="btn btn-success">
+             <i class="fa fa-save"></i> Add Company
+          </button>
+      </div>
+  </form>
+</div>
+
+<!-- <c-row ngPreserveWhitespaces>
+    <c-col xs="12">
+      <app-docs-callout href="forms/form-control" name="Form Control"></app-docs-callout>
+    </c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>Create Company</strong>
+        </c-card-header>
+        <c-card-body>
+          <app-docs-example href="forms/form-control">
+            <form cForm>
+              <div class="mb-3">
+                 <label cLabel for="name">Company Name</label>
+                 <input cFormControl id="name" placeholder="Name" type="text">
+              </div>
+              <div class="mb-3">
+                 <label cLabel for="description">Company Description</label>
+                 <input cFormControl id="description" placeholder="Description" type="text">
+              </div>
+              <div class="mb-3">
+                 <label cLabel for="email">Email address</label>
+                 <input cFormControl id="email" placeholder="name@example.com" type="email">
+              </div>
+              <div class="mb-3">
+                 <label cLabel for="password">Password</label>
+                 <input cFormControl id="password" placeholder="Password" type="password">
+              </div>
+              <div class="mb-3">
+                 <label cLabel for="role">Role</label>
+                 <input cFormControl id="role" placeholder="Role" type="text">
+              </div>
+              <div class="mb-3">
+                 <label cLabel for="photo"> Photo</label>
+                 <input cFormControl id="photo" placeholder="Photo" type="file">
+              </div>
+              <div class="mb-3">
+                <label cLabel for="events"> Events</label>
+                <input cFormControl id="events" placeholder="events" type="text">
+              </div>
+             
+            </form>
+          </app-docs-example>
+        </c-card-body>
+      </c-card>
+    </c-col>
+</c-row>    -->

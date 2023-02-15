@@ -1,1 +1,88 @@
-<p>list-company works!</p>
+<div class="row">
+  <div class="offset-md-2 col-md-8 mt-5">
+      <h1 class="text-center text-primary mt-5"> List Companys</h1>
+      <table class="table table-hover table-striped table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Email</th>
+              <th scope="col">Role</th>
+              <th scope="col">Photo</th>
+              <th scope="col">Events</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let company of companys ; let i=index" cTableColor="primary">
+              <th>{{ i+1 }}</th>
+              <td>{{ company.name }}</td>
+              <td>{{ company.description }}</td>
+              <td>{{ company.email }}</td>
+              <td>{{ company.role }}</td>
+              <td>{{ company.photo }}</td>
+              <td>{{ company.events }}</td>
+              <td>
+                  <button class="btn btn-info text-white me-1" [routerLink]="['/edit-company', company.id]">
+                    <i class="fa fa-edit"></i> Edit
+                  </button>
+                  <button class="btn btn-danger" (click)="delete(i)">
+                    <i class="fa fa-trash"></i> Delete
+                  </button>
+              </td>
+            </tr>
+           
+          </tbody>
+        </table>
+  </div>
+</div>
+
+
+<!-- <c-row ngPreserveWhitespaces>
+    <c-col xs="12">
+      <app-docs-callout href="components/table" name="Table"></app-docs-callout>
+    </c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>List of Companys</strong> 
+        </c-card-header>
+        <c-card-body>
+          <app-docs-example href="components/table">
+            <table cTable>
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Events</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let company of Companys ; let i=index" cTableColor="primary">
+                    <th>{{ i+1 }}</th>
+                    <td>{{ company.name }}</td>
+                    <td>{{ company.description }}</td>
+                    <td>{{ company.email }}</td>
+                    <td>{{ company.role }}</td>
+                    <td>{{ company.photo }}</td>
+                    <td>{{ company.events }}</td>
+                    <td>
+                        <button class="btn btn-info text-white me-1" routerLink="/edit-company">
+                          <i class="fa fa-edit"></i> Update
+                        </button>
+                        <button class="btn btn-danger" (click)="deleteCompany(i)">
+                          <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </app-docs-example>
+        </c-card-body>
+      </c-card>
+    </c-col>
+</c-row> -->

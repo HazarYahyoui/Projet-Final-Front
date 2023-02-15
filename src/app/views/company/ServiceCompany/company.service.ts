@@ -26,7 +26,7 @@ export class CompanyService {
     return this.http.put(`${this.baseUrl}/updateCompany/:Id`, body);
   }
 
-  deleteCompany(Id: string, body:any){
-    return this.http.delete(`${this.baseUrl}/deleteCompany/:Id`, body);
+  deleteCompany(Id: string){
+    return this.http.delete(`${this.baseUrl}/deleteCompany/:Id`);
   }
 }
