@@ -1,1 +1,107 @@
-<p>edit-event works!</p>
+<div class="row">
+    <h1 class="text-center text-primary mt-5">Edit Event </h1>
+    <form *ngIf="editeventForm" [formGroup]="editeventForm" (ngSubmit)="editEvent()" class="offset-md-2 col-md-8 my-5">
+        <div class="row">
+            <div>
+             <div class="mb-3">
+                <label for="name" class="form-label">Event Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Type the name here" formControlName="name" [ngClass]="{'is-valid': submitted && !editeventForm.get('name')?.errors ,'is-invalid': submitted && editeventForm.get('name')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('name')?.hasError('required')">
+                  Name is required.
+                </div>
+             </div>
+            </div>
+            <div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Event Description</label>
+                <input type="text" class="form-control" id="description" placeholder="Type the description here" formControlName="description" [ngClass]="{'is-valid': submitted && !editeventForm.get('description')?.errors ,'is-invalid': submitted && editeventForm.get('description')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('description')?.hasError('required')">
+                 Description is required.
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-3">
+                <label for="startDate" class="form-label">Start Date Time</label>
+                <input type="date" class="form-control" id="startDate" placeholder="" formControlName="startDate" [ngClass]="{'is-valid': submitted && !editeventForm.get('startDate')?.errors ,'is-invalid': submitted && editeventForm.get('startDate')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('startDate')?.hasError('required')">
+                 Start Date Time is required.
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-3">
+                <label for="endDate" class="form-label">End Date Time</label>
+                <input type="date" class="form-control" id="endDate" placeholder="" formControlName="endDate" [ngClass]="{'is-valid': submitted && !editeventForm.get('endDate')?.errors ,'is-invalid': submitted && editeventForm.get('endDate')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('endDate')?.hasError('required')">
+                 End Date Time is required.
+                </div>
+              </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                  <label for="photo" class="form-label">Event Photo</label>
+                  <input type="file" class="form-control" id="photo" placeholder="Photo" formControlName="photo" [ngClass]="{'is-valid': submitted && !editeventForm.get('photo')?.errors ,'is-invalid': submitted && editeventForm.get('photo')?.errors}">
+                  <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('photo')?.hasError('required')">
+                   Photo is required.
+                  </div>
+                </div>
+              </div>
+            <div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" class="form-control" id="price" placeholder="Type the price here" formControlName="price" [ngClass]="{'is-valid': submitted && !editeventForm.get('price')?.errors ,'is-invalid': submitted && editeventForm.get('price')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('price')?.hasError('required')">
+                 Price is required.
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-3">
+                <label for="ticketNumber" class="form-label">Availabel Ticket Number</label>
+                <input type="number" class="form-control" id="ticketNumber" placeholder="" formControlName="ticketNumber" [ngClass]="{'is-valid': submitted && !editeventForm.get('ticketNumber')?.errors ,'is-invalid': submitted && editeventForm.get('ticketNumber')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('ticketNumber')?.hasError('required')">
+                 Availabel Ticket Number is required.
+                </div>
+              </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                  <label for="eventType" class="form-label">Event Type</label>
+                  <input type="text" class="form-control" id="eventType" placeholder="Type the Event Type here" formControlName="eventType" [ngClass]="{'is-valid': submitted && !editeventForm.get('eventType')?.errors ,'is-invalid': submitted && editeventForm.get('eventType')?.errors}">
+                  <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('eventType')?.hasError('required')">
+                   Event Type is required.
+                  </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                  <label for="location" class="form-label">Location </label>
+                  <input type="text" class="form-control" id="location" placeholder="Type the Location here" formControlName="location" [ngClass]="{'is-valid': submitted && !editeventForm.get('location')?.errors ,'is-invalid': submitted && editeventForm.get('location')?.errors}">
+                  <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('location')?.hasError('required')">
+                   Location is required.
+                  </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                  <label for="tags" class="form-label">Tags</label>
+                  <input type="text" class="form-control" id="tags" placeholder="" formControlName="tags" [ngClass]="{'is-valid': submitted && !editeventForm.get('tags')?.errors ,'is-invalid': submitted && editeventForm.get('tags')?.errors}">
+                  <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('tags')?.hasError('required')">
+                   Tags is required.
+                  </div>
+                </div>
+            </div>
+
+           
+        </div>
+        
+          
+        <div class="row">
+           
+            <button type="submit" class="btn btn-success">
+               <i class="fa fa-save"></i> Edit Event
+            </button>
+        </div>
+    </form>
+  </div>

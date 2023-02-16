@@ -1,1 +1,46 @@
-<p>list-event works!</p>
+<div class="row">
+    <div class="offset-md-2 col-md-8 mt-5">
+        <h1 class="text-center text-primary mt-5"> List Events</h1>
+        <table class="table table-hover table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Start Date Time</th>
+                <th scope="col">End Date Time</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Price</th>
+                <th scope="col">Availabel Ticket Number</th>
+                <th scope="col">Event Type</th>
+                <th scope="col">Location</th>
+                <th scope="col">Tags</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let event of events ; let i=index" cTableColor="primary">
+                <th>{{ i+1 }}</th>
+                <td>{{ event.name }}</td>
+                <td>{{ event.description }}</td>
+                <td>{{ event.startDate }}</td>
+                <td>{{ event.endDate }}</td>
+                <td>{{ event.photo }}</td>
+                <td>{{ event.price }}</td>
+                <td>{{ event.ticketNumber }}</td>
+                <td>{{ event.eventType }}</td>
+                <td>{{ event.location }}</td>
+                <td>{{ event.tags }}</td>
+                <td>
+                    <button class="btn btn-info text-white me-1" [routerLink]="['/edit-event', event.id]">
+                      <i class="fa fa-edit"></i> Edit
+                    </button>
+                    <button class="btn btn-danger" (click)="delete(i)">
+                      <i class="fa fa-trash"></i> Delete
+                    </button>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+  </div>

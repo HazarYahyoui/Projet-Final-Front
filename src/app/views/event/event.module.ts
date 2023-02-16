@@ -6,6 +6,7 @@ import { EventComponent } from './event.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { ListEventComponent } from './list-event/list-event.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { EditEventComponent } from './edit-event/edit-event.component';
   ],
   imports: [
     CommonModule,
-    EventRoutingModule
+    EventRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class EventModule { }
