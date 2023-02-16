@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="offset-md-2 col-md-8 mt-5">
+        <h1 class="text-center text-primary mt-5"> List Tags</h1>
+        <table class="table table-hover table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tag of tags ; let i=index" cTableColor="primary">
+                <th>{{ i+1 }}</th>
+                <td>{{ tag.name }}</td>
+                <td>{{ tag.description }}</td>
+                <td>
+                    <button class="btn btn-info text-white me-1" [routerLink]="['/edit-tag', tag.id]">
+                      <i class="fa fa-edit"></i> Edit
+                    </button>
+                    <button class="btn btn-danger" (click)="delete(i)">
+                      <i class="fa fa-trash"></i> Delete
+                    </button>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+  </div>
