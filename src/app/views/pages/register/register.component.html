@@ -4,30 +4,56 @@
       <c-col lg="7" md="9" xl="6">
         <c-card class="mx-4">
           <c-card-body class="p-4">
-            <form cForm>
+            <form cForm *ngIf="registerForm" [formGroup]="registerForm" (ngSubmit)="addregister()" class="offset-md-2 col-md-8 my-5">
               <h1>Register</h1>
               <p class="text-medium-emphasis">Create your account</p>
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilUser"></svg>
                 </span>
-                <input autoComplete="name" cFormControl placeholder="Username" />
+                <!-- <input autoComplete="name" cFormControl placeholder="CompanyName" /> -->
+                <input autoComplete="name" cFormControl placeholder="CompanyName" type="text" class="form-control" id="name"  formControlName="name" [ngClass]="{'is-valid': submitted && !registerForm.get('name')?.errors ,'is-invalid': submitted && registerForm.get('name')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && registerForm.get('name')?.hasError('required')">
+                Name is required.
+              </div>
+              </c-input-group>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilCommentSquare"></svg>
+                </span>
+                <!-- <input autoComplete="name" cFormControl placeholder="CompanyName" /> -->
+                <input autoComplete="description" cFormControl placeholder="CompanyDescription" type="text" class="form-control" id="description"  formControlName="description" [ngClass]="{'is-valid': submitted && !registerForm.get('description')?.errors ,'is-invalid': submitted && registerForm.get('description')?.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && registerForm.get('description')?.hasError('required')">
+                Description is required.
+              </div>
               </c-input-group>
               <c-input-group class="mb-3">
                 <span cInputGroupText>@</span>
-                <input autoComplete="email" cFormControl placeholder="Email" />
+                <!-- <input autoComplete="email" cFormControl placeholder="Email" /> -->
+                <input autoComplete="email" cFormControl placeholder="Email" type="email" class="form-control" id="email"  formControlName="email" [ngClass]="{'is-valid': submitted && !registerForm.get('email')?.errors ,'is-invalid': submitted && registerForm.get('email')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && registerForm.get('email')?.hasError('required')">
+                  Email is required.
+                </div>
               </c-input-group>
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilLockLocked"></svg>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Password" type="password" />
+                <!-- <input autoComplete="new-password" cFormControl placeholder="Password" type="password" /> -->
+                <input autoComplete="password" cFormControl placeholder="Password" type="password" class="form-control" id="password"  formControlName="password" [ngClass]="{'is-valid': submitted && !registerForm.get('password')?.errors ,'is-invalid': submitted && registerForm.get('password')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && registerForm.get('password')?.hasError('required')">
+                  Password is required.
+                </div>
               </c-input-group>
               <c-input-group class="mb-4">
                 <span cInputGroupText>
-                  <svg cIcon name="cilLockLocked"></svg>
+                  <svg cIcon name="cilContact"></svg>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" />
+                <!-- <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" /> -->
+                <input autoComplete="role" cFormControl placeholder="Role" type="text" class="form-control" id="role"  formControlName="role" [ngClass]="{'is-valid': submitted && !registerForm.get('role')?.errors ,'is-invalid': submitted && registerForm.get('role')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && registerForm.get('role')?.hasError('required')">
+                  Role is required.
+                </div>
               </c-input-group>
               <div class="d-grid">
                 <button cButton color="success">Create Account</button>

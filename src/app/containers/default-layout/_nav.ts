@@ -30,6 +30,63 @@ export const navItems: INavData[] = [
     title: true
   },
   {
+    name: 'Companys',
+    url: '/company',
+    iconComponent: { name: 'cil-star' },
+    children: [
+      {
+        name: 'Add Company',
+        url: '/company/add-company'
+      },
+      {
+        name: 'Edit Company',
+        url: '/company/edit-company'
+      },
+      {
+        name: 'List Company',
+        url: '/company/list-company'
+      }
+    ]
+  },
+  {
+    name: 'Events',
+    url: '/event',
+    iconComponent: { name: 'cil-star' },
+    children: [
+      {
+        name: 'Add Event',
+        url: '/event/add-event'
+      },
+      {
+        name: 'Edit Event',
+        url: '/event/edit-event'
+      },
+      {
+        name: 'List Event',
+        url: '/event/list-event'
+      }
+    ]
+  },
+  {
+    name: 'Tags',
+    url: '/tag',
+    iconComponent: { name: 'cil-star' },
+    children: [
+      {
+        name: 'Add Tag',
+        url: '/tag/add-tag'
+      },
+      {
+        name: 'Edit Tag',
+        url: '/tag/edit-tag'
+      },
+      {
+        name: 'List Tag',
+        url: '/tag/list-tag'
+      }
+    ]
+  },
+  {
     name: 'Base',
     url: '/base',
     iconComponent: { name: 'cil-puzzle' },
@@ -241,4 +298,5 @@ export const navItems: INavData[] = [
       }
     ]
   },
+  
 ];

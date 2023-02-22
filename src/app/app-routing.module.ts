@@ -70,6 +70,21 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/pages/pages.module').then((m) => m.PagesModule)
       },
+      {
+        path: 'Company', 
+        loadChildren: () => 
+          import('./views/company/company.module').then(m => m.CompanyModule) 
+      },
+      {
+        path: 'Event', 
+        loadChildren: () => 
+         import('./views/event/event.module').then(m => m.EventModule) 
+      },
+      {
+        path: 'Tag', 
+        loadChildren: () => 
+         import('./views/tag/tag.module').then(m => m.TagModule) 
+      },
     ]
   },
   {
@@ -100,11 +115,10 @@ const routes: Routes = [
       title: 'Register Page'
     }
   },
+  
   { path: 'Home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-  { path: 'Company', loadChildren: () => import('./views/company/company.module').then(m => m.CompanyModule) },
-  { path: 'Event', loadChildren: () => import('./views/event/event.module').then(m => m.EventModule) },
-  { path: 'Tag', loadChildren: () => import('./views/tag/tag.module').then(m => m.TagModule) },
-  {path: '**', redirectTo: 'dashboard'}
+
+  {path: '**', component: Page404Component}
 ];
 
 @NgModule({
