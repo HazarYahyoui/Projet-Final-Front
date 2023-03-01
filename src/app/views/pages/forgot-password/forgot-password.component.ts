@@ -4,29 +4,27 @@ import { Router } from '@angular/router';
 import { AuthService } from '../ServiceAuth/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.scss']
 })
-export class LoginComponent implements OnInit {
-
-  loginForm?: FormGroup;
+export class ForgotPasswordComponent implements OnInit {
+ 
+  forgotpasswordForm?: FormGroup;
   submitted = false;
  constructor( private authservice :AuthService , private router: Router){ }
   ngOnInit(): void {
-   this.loginForm = new FormGroup({
+   this.forgotpasswordForm = new FormGroup({
     email : new FormControl ('', [Validators.required]),
-    password : new FormControl ('', [Validators.required]),
    });
   }
 
-  addlog(){
+  forgotPass(){
     this.submitted = true;
-    if(this.loginForm?.invalid){
+    if(this.forgotpasswordForm?.invalid){
       return;
     }
-    this.authservice.login
-    this.router.navigateByUrl('/add-company');
+    this.authservice.forgotPassword(this.forgotpasswordForm?.value)
+    this.router.navigateByUrl('/reset-password');
   }
 }
-

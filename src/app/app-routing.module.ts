@@ -6,6 +6,8 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
+import { ForgotPasswordComponent } from './views/pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './views/pages/reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -113,6 +115,20 @@ const routes: Routes = [
     component: RegisterComponent,
     data: {
       title: 'Register Page'
+    }
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
+    data: {
+      title: 'Forgot Password Page'
+    }
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent,
+    data: {
+      title: 'Reset Password Page'
     }
   },
   

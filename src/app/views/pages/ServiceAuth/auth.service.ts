@@ -18,4 +18,14 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/login`, body);
 
   }
+
+  forgotPassword(body: any){
+    return this.http.post(`${this.baseUrl}/forgotPass`, body);
+
+  }
+
+  resetPassword(body: any){
+    return this.http.put(`${this.baseUrl}/resetPass`, body);
+
+  }
 }

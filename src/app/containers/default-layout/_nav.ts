@@ -289,6 +289,14 @@ export const navItems: INavData[] = [
         url: '/register'
       },
       {
+        name: 'Forgot Password',
+        url: '/forgot-password'
+      },
+      {
+        name: 'Reset Password',
+        url: '/reset-password'
+      },
+      {
         name: 'Error 404',
         url: '/404'
       },
