@@ -49,30 +49,48 @@
               </div>
             <div>
               <div class="mb-3">
+                <label for="ticketNumber" class="form-label">Availabel Ticket Number</label>
+                <input type="number" class="form-control" id="ticketNumber" placeholder="" formControlName="ticketNumber" [ngClass]="{'is-valid': submitted && !addeventForm.get('ticketNumber')?.errors ,'is-invalid': submitted && addeventForm.get('ticketNumber')?.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('ticketNumber')?.hasError('required')">
+                 Availabel Ticket Number is required.
+                </div>
+                <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('ticketNumber')?.hasError('min')">
+                  Ticket number must be >= 1 .
+              </div>
+              <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('ticketNumber')?.hasError('max')">
+                Ticket number must be <= 10.
+            </div>
+              </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                  <label for="eventType" class="form-label">Event Type</label>
+                  <!-- <input type="text" class="form-control" id="eventType" placeholder="Type the Event Type here" formControlName="eventType" [ngClass]="{'is-valid': submitted && !addeventForm.get('eventType')?.errors ,'is-invalid': submitted && addeventForm.get('eventType')?.errors}"> -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radio" id="free" value="Free" formControlName="eventType">
+                    <label class="form-check-label" for="free">
+                      Free
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radio" id="Paid" value="Paid" formControlName="eventType" checked>
+                    <label class="form-check-label" for="Paid">
+                      Paid
+                    </label>
+                  </div>
+                  <!-- <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('eventType')?.hasError('required')">
+                    Event Type is required.
+                   </div> -->
+                </div>
+            </div>
+            <div *ngIf = "addeventForm.value.eventType === 'Paid'">
+              <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <input type="text" class="form-control" id="price" placeholder="Type the price here" formControlName="price" [ngClass]="{'is-valid': submitted && !addeventForm.get('price')?.errors ,'is-invalid': submitted && addeventForm.get('price')?.errors}">
                 <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('price')?.hasError('required')">
                  Price is required.
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="mb-3">
-                <label for="ticketNumber" class="form-label">Availabel Ticket Number</label>
-                <input type="number" class="form-control" id="ticketNumber" placeholder="" formControlName="ticketNumber" [ngClass]="{'is-valid': submitted && !addeventForm.get('ticketNumber')?.errors ,'is-invalid': submitted && addeventForm.get('ticketNumber')?.errors}">
-                <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('ticketNumber')?.hasError('required')">
-                 Availabel Ticket Number is required.
-                </div>
-              </div>
-            </div>
-            <div>
-                <div class="mb-3">
-                  <label for="eventType" class="form-label">Event Type</label>
-                  <input type="text" class="form-control" id="eventType" placeholder="Type the Event Type here" formControlName="eventType" [ngClass]="{'is-valid': submitted && !addeventForm.get('eventType')?.errors ,'is-invalid': submitted && addeventForm.get('eventType')?.errors}">
-                  <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('eventType')?.hasError('required')">
-                   Event Type is required.
-                  </div>
-                </div>
             </div>
             <div>
                 <div class="mb-3">

@@ -73,17 +73,17 @@ const routes: Routes = [
           import('./views/pages/pages.module').then((m) => m.PagesModule)
       },
       {
-        path: 'Company', 
+        path: 'company', 
         loadChildren: () => 
           import('./views/company/company.module').then(m => m.CompanyModule) 
       },
       {
-        path: 'Event', 
+        path: 'event', 
         loadChildren: () => 
          import('./views/event/event.module').then(m => m.EventModule) 
       },
       {
-        path: 'Tag', 
+        path: 'tag', 
         loadChildren: () => 
          import('./views/tag/tag.module').then(m => m.TagModule) 
       },

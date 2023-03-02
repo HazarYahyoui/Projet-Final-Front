@@ -20,11 +20,11 @@ export class AddEventComponent implements OnInit {
       startDate: new FormControl('',[Validators.required]),
       endDate: new FormControl('',[Validators.required]),
       photo: new FormControl('',[Validators.required]),
-      price: new FormControl('',[Validators.required]),
-      ticketNumber: new FormControl('',[Validators.required]),
+      ticketNumber: new FormControl('',[Validators.required, Validators.min(1), Validators.max(10)]),
       eventType: new FormControl('',[Validators.required]),
+      price: new FormControl('',[]),
       location: new FormControl('',[Validators.required]),
-      tags: new FormControl('',[Validators.required]),
+      tags: new FormControl('',[]),
     })
   }
 

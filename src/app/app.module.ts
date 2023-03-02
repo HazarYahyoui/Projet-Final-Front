@@ -45,6 +45,7 @@ import {
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { HttpClientModule } from '@angular/common/http';
 // import { CardEventComponent } from './home/events/card-event/card-event.component';
 
 
@@ -87,7 +88,8 @@ const APP_CONTAINERS = [
     BadgeModule,
     ListGroupModule,
     CardModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     {
