@@ -13,7 +13,10 @@ export class ListCompanyComponent implements OnInit{
 
   constructor(private companyservice:CompanyService, private router: Router){ }
   ngOnInit(): void {
-    this.companys=this.companyservice.getAllCompany()
+    this.companyservice.getAllCompany().subscribe((response)=>{
+      this.companys= response
+    },(error)=>{console.log(error);
+    })
   }
   delete(i:any){
     this.companyservice.deleteCompany(i)

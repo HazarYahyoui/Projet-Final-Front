@@ -45,16 +45,15 @@
                   Password is required.
                 </div>
               </c-input-group>
-              <c-input-group class="mb-4">
+              <!-- <c-input-group class="mb-4">
                 <span cInputGroupText>
                   <svg cIcon name="cilContact"></svg>
                 </span>
-                <!-- <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" /> -->
                 <input autoComplete="role" cFormControl placeholder="Role" type="text" class="form-control" id="role"  formControlName="role" [ngClass]="{'is-valid': submitted && !registerForm.get('role')?.errors ,'is-invalid': submitted && registerForm.get('role')?.errors}">
                 <div class="invalid-feedback" *ngIf="submitted && registerForm.get('role')?.hasError('required')">
                   Role is required.
                 </div>
-              </c-input-group>
+              </c-input-group> -->
               <div class="d-grid">
                 <button cButton color="success">Create Account</button>
               </div>

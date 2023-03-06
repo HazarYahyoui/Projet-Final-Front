@@ -22,8 +22,8 @@ export class EditTagComponent implements OnInit{
     this.tagId= this.route.snapshot.params['id']
     this.tag = this.tagservice.getTag(this.tagId)
     this.edittagForm = new FormGroup({
-      name: new FormControl('',[Validators.required]),
-      description: new FormControl('',[Validators.required]),
+      tagName: new FormControl('',[Validators.required]),
+      tagDescription: new FormControl('',[Validators.required]),
     });
 
     this.edittagForm.patchValue(this.tag);

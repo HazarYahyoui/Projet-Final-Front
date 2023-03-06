@@ -13,8 +13,8 @@ export class EditEventComponent implements OnInit {
   editeventForm:FormGroup =new FormGroup({
     name: new FormControl('',[Validators.required]),
     description: new FormControl('',[Validators.required]),
-    startDate: new FormControl('',[Validators.required]),
-    endDate: new FormControl('',[Validators.required]),
+    startDateTime: new FormControl('',[Validators.required]),
+    endDateTime: new FormControl('',[Validators.required]),
     photo: new FormControl('',[Validators.required]),
     price: new FormControl('',[Validators.required]),
     ticketNumber: new FormControl('',[Validators.required]),
@@ -52,7 +52,7 @@ export class EditEventComponent implements OnInit {
       return;
     }
     this.eventservice.updateEvent(this.editeventForm.value, this.eventId);
-    this.router.navigateByUrl('/list-event');
+    this.router.navigateByUrl('/event/list-event');
    
   }
 }

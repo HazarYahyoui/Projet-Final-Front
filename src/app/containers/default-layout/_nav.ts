@@ -38,10 +38,10 @@ export const navItems: INavData[] = [
         name: 'Add Company',
         url: '/company/add-company'
       },
-      {
-        name: 'Edit Company',
-        url: '/company/edit-company'
-      },
+      // {
+      //   name: 'Edit Company',
+      //   url: '/company/edit-company'
+      // },
       {
         name: 'List Company',
         url: '/company/list-company'
@@ -57,10 +57,10 @@ export const navItems: INavData[] = [
         name: 'Add Event',
         url: '/event/add-event'
       },
-      {
-        name: 'Edit Event',
-        url: '/event/edit-event'
-      },
+      // {
+      //   name: 'Edit Event',
+      //   url: '/event/edit-event'
+      // },
       {
         name: 'List Event',
         url: '/event/list-event'
@@ -76,10 +76,10 @@ export const navItems: INavData[] = [
         name: 'Add Tag',
         url: '/tag/add-tag'
       },
-      {
-        name: 'Edit Tag',
-        url: '/tag/edit-tag'
-      },
+      // {
+      //   name: 'Edit Tag',
+      //   url: '/tag/edit-tag'
+      // },
       {
         name: 'List Tag',
         url: '/tag/list-tag'

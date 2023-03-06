@@ -7,26 +7,26 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 })
 export class CompanyService {
- baseUrl: string = environment.baseUrl;
+ 
   constructor( private http: HttpClient) { }
   
  
   getAllCompany(){
-    return this.http.get(`${this.baseUrl}/AllCompany`);
+    return this.http.get(`http://localhost:3000/AllCompany`);
   }
 
   getCompany(Id:string){
-    return this.http.get(`${this.baseUrl}/:Id`);
+    return this.http.get(`http://localhost:3000/${Id}`);
   }
   createCompany(body:any){
-    return this.http.post(`${this.baseUrl}/createCompany`, body);
+    return this.http.post(`http://localhost:3000/createCompany`, body);
   }
 
   updateCompany(Id: string, body:any){
-    return this.http.put(`${this.baseUrl}/updateCompany/:Id`, body);
+    return this.http.put(`http://localhost:3000/updateCompany/${Id}`, body);
   }
 
   deleteCompany(Id: string){
-    return this.http.delete(`${this.baseUrl}/deleteCompany/:Id`);
+    return this.http.delete(`http://localhost:3000/deleteCompany/${Id}`);
   }
 }

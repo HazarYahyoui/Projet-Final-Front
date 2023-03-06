@@ -15,7 +15,10 @@ export class ListEventComponent implements OnInit {
   constructor(private eventservice: EventService, private router: Router){ }
 
   ngOnInit(): void {
-    this.events=this.eventservice.getAllEvent()
+    this.eventservice.getAllEvent().subscribe((response:any)=>{
+      this.events= response
+    },(error)=>{console.log(error);
+    })
 
   };
 

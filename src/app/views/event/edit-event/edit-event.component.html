@@ -23,7 +23,7 @@
             <div>
               <div class="mb-3">
                 <label for="startDate" class="form-label">Start Date Time</label>
-                <input type="date" class="form-control" id="startDate" placeholder="" formControlName="startDate" [ngClass]="{'is-valid': submitted && !editeventForm.get('startDate')?.errors ,'is-invalid': submitted && editeventForm.get('startDate')?.errors}">
+                <input type="date" class="form-control" id="startDate" placeholder="" formControlName="startDateTime" [ngClass]="{'is-valid': submitted && !editeventForm.get('startDate')?.errors ,'is-invalid': submitted && editeventForm.get('startDate')?.errors}">
                 <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('startDate')?.hasError('required')">
                  Start Date Time is required.
                 </div>
@@ -32,7 +32,7 @@
             <div>
               <div class="mb-3">
                 <label for="endDate" class="form-label">End Date Time</label>
-                <input type="date" class="form-control" id="endDate" placeholder="" formControlName="endDate" [ngClass]="{'is-valid': submitted && !editeventForm.get('endDate')?.errors ,'is-invalid': submitted && editeventForm.get('endDate')?.errors}">
+                <input type="date" class="form-control" id="endDate" placeholder="" formControlName="endDateTime" [ngClass]="{'is-valid': submitted && !editeventForm.get('endDate')?.errors ,'is-invalid': submitted && editeventForm.get('endDate')?.errors}">
                 <div class="invalid-feedback" *ngIf="submitted && editeventForm.get('endDate')?.hasError('required')">
                  End Date Time is required.
                 </div>

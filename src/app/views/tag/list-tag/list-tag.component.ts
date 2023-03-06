@@ -13,7 +13,10 @@ export class ListTagComponent implements OnInit{
   constructor(private tagservice: TagService, private router: Router){ }
 
   ngOnInit(): void {
-    this.tags=this.tagservice.getAllTag()
+    this.tagservice.getAllTag().subscribe((response)=>{
+      this.tags= response
+    },(error)=>{console.log(error);
+    })
 
   };
 

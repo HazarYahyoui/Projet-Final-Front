@@ -17,14 +17,14 @@ export class AddEventComponent implements OnInit {
     this.addeventForm = new FormGroup({
       name: new FormControl('',[Validators.required]),
       description: new FormControl('',[Validators.required]),
-      startDate: new FormControl('',[Validators.required]),
-      endDate: new FormControl('',[Validators.required]),
+      startDateTime: new FormControl('',[Validators.required]),
+      endDateTime: new FormControl('',[Validators.required]),
       photo: new FormControl('',[Validators.required]),
       ticketNumber: new FormControl('',[Validators.required, Validators.min(1), Validators.max(10)]),
       eventType: new FormControl('',[Validators.required]),
       price: new FormControl('',[]),
       location: new FormControl('',[Validators.required]),
-      tags: new FormControl('',[]),
+      // tags: new FormControl('',[]),
     })
   }
 
@@ -34,7 +34,13 @@ export class AddEventComponent implements OnInit {
       return;
     }
     console.log(this.addeventForm?.value);
-    this.eventservice.createEvent(this.addeventForm?.value)
-    this.router.navigateByUrl('/list-event');
-  }
+    this.eventservice.createEvent(this.addeventForm?.value).subscribe((response:any)=>{
+      console.log(response);
+      this.router.navigateByUrl('/event/list-event');
+    },(error)=>{console.log(error);
+    })
+  
+    // alert('Your event was created successfully')
+    
+}
 }

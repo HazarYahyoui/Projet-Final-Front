@@ -7,27 +7,27 @@ import { environment } from 'src/environments/environment';
 })
 export class EventService {
 
-  baseUrl: string = environment.baseUrl;
+ 
   constructor( private http: HttpClient) { }
   
  
   getAllEvent(){
-    return this.http.get(`${this.baseUrl}/AllEvent`);
+    return this.http.get(`http://localhost:3000/AllEvent`);
   }
 
   getEvent(Id:string){
-    return this.http.get(`${this.baseUrl}/:Id`);
+    return this.http.get(`http://localhost:3000/${Id}`);
   }
   createEvent(body:any){
-    return this.http.post(`${this.baseUrl}/createEvent`, body);
+    return this.http.post(`http://localhost:3000/createEvent`, body);
   }
 
   updateEvent(Id: string, body:any){
-    return this.http.put(`${this.baseUrl}/updateEvent/:Id`, body);
+    return this.http.put(`http://localhost:3000/updateEvent/${Id}`, body);
   }
 
   deleteEvent(Id: string){
-    return this.http.delete(`${this.baseUrl}/deleteEvent/:Id`);
+    return this.http.delete(`http://localhost:3000/deleteEvent/${Id}`);
   }
 }
 

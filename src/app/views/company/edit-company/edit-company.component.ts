@@ -28,8 +28,8 @@ export class EditCompanyComponent implements OnInit {
     this.companyId= this.route.snapshot.params['id']
     this.company = this.companyservice.getCompany(this.companyId)
     this.editcompanyForm = new FormGroup({
-      name: new FormControl('',[Validators.required]),
-      description: new FormControl('',[Validators.required]),
+      companyName: new FormControl('',[Validators.required]),
+      companyDescription: new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required]),
       password: new FormControl('',[Validators.required]),
       role: new FormControl('',[Validators.required]),

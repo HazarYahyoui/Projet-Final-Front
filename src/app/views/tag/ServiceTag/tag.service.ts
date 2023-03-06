@@ -6,26 +6,26 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class TagService {
-  baseUrl: string = environment.baseUrl;
+ 
   constructor( private http: HttpClient) { }
   
  
   getAllTag(){
-    return this.http.get(`${this.baseUrl}/AllTag`);
+    return this.http.get(`http://localhost:3000/tag`);
   }
 
   getTag(Id:string){
-    return this.http.get(`${this.baseUrl}/:Id`);
+    return this.http.get(`http://localhost:3000/${Id}`);
   }
   createTag(body:any){
-    return this.http.post(`${this.baseUrl}/createTag`, body);
+    return this.http.post(`http://localhost:3000/createTag`, body);
   }
 
   updateTag(Id: string, body:any){
-    return this.http.put(`${this.baseUrl}/updateTag/:Id`, body);
+    return this.http.put(`http://localhost:3000/updateTag/${Id}`, body);
   }
 
   deleteTag(Id: string){
-    return this.http.delete(`${this.baseUrl}/deleteTag/:Id`);
+    return this.http.delete(`http://localhost:3000/deleteTag/${Id}`);
   }
 }

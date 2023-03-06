@@ -6,26 +6,26 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl: string = environment.baseUrl;
+ 
 
   constructor(private http: HttpClient) { }
 
   register(body:any){
-    return this.http.post(`${this.baseUrl}/register`, body);
+    return this.http.post(`http://localhost:3000/register`, body);
   }
 
   login(body: any){
-    return this.http.post(`${this.baseUrl}/login`, body);
+    return this.http.post(`http://localhost:3000/login`, body);
 
   }
 
   forgotPassword(body: any){
-    return this.http.post(`${this.baseUrl}/forgotPass`, body);
+    return this.http.post(`http://localhost:3000/forgotPass`, body);
 
   }
 
   resetPassword(body: any){
-    return this.http.put(`${this.baseUrl}/resetPass`, body);
+    return this.http.put(`http://localhost:3000/resetPass`, body);
 
   }
 }

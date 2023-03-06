@@ -23,7 +23,7 @@
             <div>
               <div class="mb-3">
                 <label for="startDate" class="form-label">Start Date Time</label>
-                <input type="date" class="form-control" id="startDate" placeholder="" formControlName="startDate" [ngClass]="{'is-valid': submitted && !addeventForm.get('startDate')?.errors ,'is-invalid': submitted && addeventForm.get('startDate')?.errors}">
+                <input type="date" class="form-control" id="startDate" placeholder="" formControlName="startDateTime" [ngClass]="{'is-valid': submitted && !addeventForm.get('startDate')?.errors ,'is-invalid': submitted && addeventForm.get('startDate')?.errors}">
                 <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('startDate')?.hasError('required')">
                  Start Date Time is required.
                 </div>
@@ -32,7 +32,7 @@
             <div>
               <div class="mb-3">
                 <label for="endDate" class="form-label">End Date Time</label>
-                <input type="date" class="form-control" id="endDate" placeholder="" formControlName="endDate" [ngClass]="{'is-valid': submitted && !addeventForm.get('endDate')?.errors ,'is-invalid': submitted && addeventForm.get('endDate')?.errors}">
+                <input type="date" class="form-control" id="endDate" placeholder="" formControlName="endDateTime" [ngClass]="{'is-valid': submitted && !addeventForm.get('endDate')?.errors ,'is-invalid': submitted && addeventForm.get('endDate')?.errors}">
                 <div class="invalid-feedback" *ngIf="submitted && addeventForm.get('endDate')?.hasError('required')">
                  End Date Time is required.
                 </div>
@@ -67,13 +67,13 @@
                   <label for="eventType" class="form-label">Event Type</label>
                   <!-- <input type="text" class="form-control" id="eventType" placeholder="Type the Event Type here" formControlName="eventType" [ngClass]="{'is-valid': submitted && !addeventForm.get('eventType')?.errors ,'is-invalid': submitted && addeventForm.get('eventType')?.errors}"> -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio" id="free" value="Free" formControlName="eventType">
+                    <input class="form-check-input" type="radio"  id="free" value="Free" formControlName="eventType">
                     <label class="form-check-label" for="free">
                       Free
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio" id="Paid" value="Paid" formControlName="eventType" checked>
+                    <input class="form-check-input" type="radio"  id="Paid" value="Paid" formControlName="eventType" checked>
                     <label class="form-check-label" for="Paid">
                       Paid
                     </label>
@@ -101,7 +101,7 @@
                   </div>
                 </div>
             </div>
-            <div>
+            <!-- <div>
                 <div class="mb-3">
                   <label for="tags" class="form-label">Tags</label>
                   <input type="text" class="form-control" id="tags" placeholder="" formControlName="tags" [ngClass]="{'is-valid': submitted && !addeventForm.get('tags')?.errors ,'is-invalid': submitted && addeventForm.get('tags')?.errors}">
@@ -109,7 +109,7 @@
                    Tags is required.
                   </div>
                 </div>
-            </div>
+            </div> -->
 
            
         </div>

@@ -15,8 +15,8 @@ export class AddTagComponent implements OnInit {
   constructor(private tagservice: TagService, private router: Router){ }
   ngOnInit(): void {
     this.addtagForm = new FormGroup({
-      name: new FormControl('',[Validators.required]),
-      description: new FormControl('',[Validators.required]),
+      tagName: new FormControl('',[Validators.required]),
+      tagDescription: new FormControl('',[Validators.required]),
     })
   }
 
@@ -26,7 +26,11 @@ export class AddTagComponent implements OnInit {
       return;
     }
     console.log(this.addtagForm?.value);
-    this.tagservice.createTag(this.addtagForm?.value)
-    this.router.navigateByUrl('/list-tag');
+    this.tagservice.createTag(this.addtagForm?.value).subscribe((response)=>{
+      console.log(response);
+      this.router.navigateByUrl('/tag/list-tag');
+    },(error)=>{console.log(error);
+    })
+   
   }
 }

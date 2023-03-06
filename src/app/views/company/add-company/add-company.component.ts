@@ -15,12 +15,12 @@ export class AddCompanyComponent implements OnInit {
   constructor(private companyservice: CompanyService, private router: Router){ }
   ngOnInit(): void {
     this.addcompanyForm = new FormGroup({
-      name: new FormControl('',[Validators.required]),
-      description: new FormControl('',[Validators.required]),
+      companyName: new FormControl('',[Validators.required]),
+      companyDescription: new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required]),
       password: new FormControl('',[Validators.required]),
-      role: new FormControl('',[Validators.required]),
-      photo: new FormControl('',[Validators.required]),
+      // role: new FormControl('',[Validators.required]),
+      // photo: new FormControl('',[Validators.required]),
       events: new FormControl('',[Validators.required])
     })
   }
@@ -31,7 +31,12 @@ export class AddCompanyComponent implements OnInit {
       return;
     }
     console.log(this.addcompanyForm?.value);
-    this.companyservice.createCompany(this.addcompanyForm?.value)
-    this.router.navigateByUrl('/list-company');
+    this.companyservice.createCompany(this.addcompanyForm?.value).subscribe((response)=>{
+      console.log(response);
+      this.router.navigateByUrl('/company/list-company');
+    },(error)=>{console.log(error);
+    })
+    alert('Company account was cresated successfully')
+   
   }
 }

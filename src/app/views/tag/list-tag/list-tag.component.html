@@ -12,10 +12,10 @@
             <tbody>
               <tr *ngFor="let tag of tags ; let i=index" cTableColor="primary">
                 <th>{{ i+1 }}</th>
-                <td>{{ tag.name }}</td>
-                <td>{{ tag.description }}</td>
+                <td>{{ tag.tagName }}</td>
+                <td>{{ tag.tagDescription }}</td>
                 <td>
-                    <button class="btn btn-info text-white me-1" [routerLink]="['/edit-tag', tag.id]">
+                    <button class="btn btn-info text-white me-1" [routerLink]="['/edit-tag', tag._id]">
                       <i class="fa fa-edit"></i> Edit
                     </button>
                     <button class="btn btn-danger" (click)="delete(i)">

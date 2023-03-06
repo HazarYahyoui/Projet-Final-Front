@@ -31,7 +31,7 @@
                 <td>{{ event.location }}</td>
                 <td>{{ event.tags }}</td>
                 <td>
-                    <button class="btn btn-info text-white me-1" [routerLink]="['/edit-event', event.id]">
+                    <button class="btn btn-info text-white me-1" [routerLink]="['/event/edit-event', event._id]">
                       <i class="fa fa-edit"></i> Edit
                     </button>
                     <button class="btn btn-danger" (click)="delete(i)">

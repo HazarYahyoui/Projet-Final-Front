@@ -5,7 +5,7 @@
           <div>
            <div class="mb-3">
               <label for="name" class="form-label">Company Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Type the name here" formControlName="name" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('name')?.errors ,'is-invalid': submitted && addcompanyForm.get('name')?.errors}">
+              <input type="text" class="form-control" id="name" placeholder="Type the name here" formControlName="companyName" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('name')?.errors ,'is-invalid': submitted && addcompanyForm.get('name')?.errors}">
               <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('name')?.hasError('required')">
                 Name is required.
               </div>
@@ -14,7 +14,7 @@
           <div>
             <div class="mb-3">
               <label for="description" class="form-label">Company Description</label>
-              <input type="text" class="form-control" id="description" placeholder="Type the description here" formControlName="description" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('description')?.errors ,'is-invalid': submitted && addcompanyForm.get('description')?.errors}">
+              <input type="text" class="form-control" id="description" placeholder="Type the description here" formControlName="companyDescription" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('description')?.errors ,'is-invalid': submitted && addcompanyForm.get('description')?.errors}">
               <div class="invalid-feedback" *ngIf="submitted && addcompanyForm.get('description')?.hasError('required')">
                Description is required.
               </div>
@@ -38,7 +38,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <!-- <div>
             <div class="mb-3">
               <label for="role" class="form-label">Role</label>
               <input type="text" class="form-control" id="role" placeholder="Type the role here" formControlName="role" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('role')?.errors ,'is-invalid': submitted && addcompanyForm.get('role')?.errors}">
@@ -46,8 +46,8 @@
                Role is required.
               </div>
             </div>
-          </div>
-          <div>
+          </div> -->
+          <!-- <div>
             <div class="mb-3">
               <label for="photo" class="form-label">Company Photo</label>
               <input type="file" class="form-control" id="photo" placeholder="Photo" formControlName="photo" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('photo')?.errors ,'is-invalid': submitted && addcompanyForm.get('photo')?.errors}">
@@ -55,8 +55,8 @@
                Photo is required.
               </div>
             </div>
-          </div>
-          <div>
+          </div> -->
+          <!-- <div>
             <div class="mb-3">
               <label for="events" class="form-label">Company Events</label>
               <input type="text" class="form-control" id="events" placeholder="Events" formControlName="events" [ngClass]="{'is-valid': submitted && !addcompanyForm.get('events')?.errors ,'is-invalid': submitted && addcompanyForm.get('events')?.errors}">
@@ -64,7 +64,7 @@
                Events is required.
               </div>
             </div>
-          </div>
+          </div> -->
          
       </div>
       

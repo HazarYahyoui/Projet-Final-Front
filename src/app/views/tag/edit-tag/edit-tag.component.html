@@ -5,7 +5,7 @@
             <div>
              <div class="mb-3">
                 <label for="name" class="form-label">Tag Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Type the name here" formControlName="name" [ngClass]="{'is-valid': submitted && !edittagForm.get('name')?.errors ,'is-invalid': submitted && edittagForm.get('name')?.errors}">
+                <input type="text" class="form-control" id="name" placeholder="Type the name here" formControlName="tagName" [ngClass]="{'is-valid': submitted && !edittagForm.get('name')?.errors ,'is-invalid': submitted && edittagForm.get('name')?.errors}">
                 <div class="invalid-feedback" *ngIf="submitted && edittagForm.get('name')?.hasError('required')">
                   Tag Name is required.
                 </div>
@@ -14,7 +14,7 @@
             <div>
               <div class="mb-3">
                 <label for="description" class="form-label">Tag Description</label>
-                <input type="text" class="form-control" id="description" placeholder="Type the description here" formControlName="description" [ngClass]="{'is-valid': submitted && !edittagForm.get('description')?.errors ,'is-invalid': submitted && edittagForm.get('description')?.errors}">
+                <input type="text" class="form-control" id="description" placeholder="Type the description here" formControlName="tagDescription" [ngClass]="{'is-valid': submitted && !edittagForm.get('description')?.errors ,'is-invalid': submitted && edittagForm.get('description')?.errors}">
                 <div class="invalid-feedback" *ngIf="submitted && edittagForm.get('description')?.hasError('required')">
                  Tag Description is required.
                 </div>
