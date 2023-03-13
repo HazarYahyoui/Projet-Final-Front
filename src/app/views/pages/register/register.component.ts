@@ -15,11 +15,11 @@ export class RegisterComponent implements OnInit {
   constructor(private authservice:AuthService , private router: Router) { }
   ngOnInit(): void {
     this.registerForm = new FormGroup({
-     name : new FormControl ('', [Validators.required]),
-     description: new FormControl('',[Validators.required]),
+     companyName : new FormControl ('', [Validators.required]),
+     companyDescription: new FormControl('',[Validators.required]),
      email: new FormControl('',[Validators.required]),
      password: new FormControl('',[Validators.required]),
-     role: new FormControl('',[Validators.required]),
+    //  role: new FormControl('',[Validators.required]),
     });
    };
 
@@ -29,8 +29,12 @@ export class RegisterComponent implements OnInit {
       return;
     }
     console.log(this.registerForm?.value);
-   this.authservice.register(this.registerForm?.value);
-   this.router.navigateByUrl('/login');
+   this.authservice.register(this.registerForm?.value).subscribe((response:any)=>{
+    console.log(response);
+    this.router.navigateByUrl('/pages/login');
+  },(error)=>{console.log(error);
+  })
+  
    
   }
 }

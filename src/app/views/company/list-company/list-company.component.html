@@ -23,10 +23,10 @@
               <td>{{ company.photo }}</td>
               <td>{{ company.events }}</td>
               <td>
-                  <button class="btn btn-info text-white me-1" [routerLink]="['/edit-company', company.id]">
+                  <button class="btn btn-info text-white me-1" [routerLink]="['/company/edit-company', company._id]">
                     <i class="fa fa-edit"></i> Edit
                   </button>
-                  <button class="btn btn-danger" (click)="delete(i)">
+                  <button class="btn btn-danger" (click)="delete(company._id)">
                     <i class="fa fa-trash"></i> Delete
                   </button>
               </td>

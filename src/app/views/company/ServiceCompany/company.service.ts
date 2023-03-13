@@ -16,7 +16,7 @@ export class CompanyService {
   }
 
   getCompany(Id:string){
-    return this.http.get(`http://localhost:3000/${Id}`);
+    return this.http.get(`http://localhost:3000/Company/${Id}`);
   }
   createCompany(body:any){
     return this.http.post(`http://localhost:3000/createCompany`, body);

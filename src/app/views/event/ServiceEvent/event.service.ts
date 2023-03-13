@@ -16,7 +16,7 @@ export class EventService {
   }
 
   getEvent(Id:string){
-    return this.http.get(`http://localhost:3000/${Id}`);
+    return this.http.get(`http://localhost:3000/Event/${Id}`);
   }
   createEvent(body:any){
     return this.http.post(`http://localhost:3000/createEvent`, body);

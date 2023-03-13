@@ -11,11 +11,11 @@ export class TagService {
   
  
   getAllTag(){
-    return this.http.get(`http://localhost:3000/tag`);
+    return this.http.get(`http://localhost:3000/AllTag`);
   }
 
   getTag(Id:string){
-    return this.http.get(`http://localhost:3000/${Id}`);
+    return this.http.get(`http://localhost:3000/Tag/${Id}`);
   }
   createTag(body:any){
     return this.http.post(`http://localhost:3000/createTag`, body);

@@ -15,10 +15,10 @@
                 <td>{{ tag.tagName }}</td>
                 <td>{{ tag.tagDescription }}</td>
                 <td>
-                    <button class="btn btn-info text-white me-1" [routerLink]="['/edit-tag', tag._id]">
+                    <button class="btn btn-info text-white me-1" [routerLink]="['/tag/edit-tag', tag._id]">
                       <i class="fa fa-edit"></i> Edit
                     </button>
-                    <button class="btn btn-danger" (click)="delete(i)">
+                    <button class="btn btn-danger" (click)="delete(tag._id)">
                       <i class="fa fa-trash"></i> Delete
                     </button>
                 </td>

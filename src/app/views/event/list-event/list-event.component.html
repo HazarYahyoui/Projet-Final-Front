@@ -34,7 +34,7 @@
                     <button class="btn btn-info text-white me-1" [routerLink]="['/event/edit-event', event._id]">
                       <i class="fa fa-edit"></i> Edit
                     </button>
-                    <button class="btn btn-danger" (click)="delete(i)">
+                    <button class="btn btn-danger" (click)="delete(event._id)">
                       <i class="fa fa-trash"></i> Delete
                     </button>
                 </td>

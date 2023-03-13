@@ -21,7 +21,7 @@ export class AddCompanyComponent implements OnInit {
       password: new FormControl('',[Validators.required]),
       // role: new FormControl('',[Validators.required]),
       // photo: new FormControl('',[Validators.required]),
-      events: new FormControl('',[Validators.required])
+      // events: new FormControl('',[Validators.required])
     })
   }
 
@@ -36,7 +36,7 @@ export class AddCompanyComponent implements OnInit {
       this.router.navigateByUrl('/company/list-company');
     },(error)=>{console.log(error);
     })
-    alert('Company account was cresated successfully')
+   
    
   }
 }
