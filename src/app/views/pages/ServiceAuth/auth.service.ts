@@ -24,8 +24,8 @@ export class AuthService {
 
   }
 
-  resetPassword(body: any){
-    return this.http.put(`http://localhost:3000/resetPass`, body);
+  resetPassword(body: any, generateToken: any){
+    return this.http.post(`http://localhost:3000/resetPass/`+ generateToken, body);
 
   }
 }

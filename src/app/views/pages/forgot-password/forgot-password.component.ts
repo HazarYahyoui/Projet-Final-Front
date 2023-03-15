@@ -24,7 +24,13 @@ export class ForgotPasswordComponent implements OnInit {
     if(this.forgotpasswordForm?.invalid){
       return;
     }
-    this.authservice.forgotPassword(this.forgotpasswordForm?.value)
-    this.router.navigateByUrl('/reset-password');
+    console.log(this.forgotpasswordForm?.value);
+    
+    this.authservice.forgotPassword(this.forgotpasswordForm?.value).subscribe((response:any)=>{
+      console.log(response);
+      this.router.navigateByUrl('/pages/login');
+    },(error)=>{console.log(error);
+    })
+  
   }
 }

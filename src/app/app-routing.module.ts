@@ -125,7 +125,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'reset-password',
+    path: 'reset-password/:generateToken',
     component: ResetPasswordComponent,
     data: {
       title: 'Reset Password Page'

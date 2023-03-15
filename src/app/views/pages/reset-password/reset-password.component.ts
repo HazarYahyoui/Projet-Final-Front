@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../ServiceAuth/auth.service';
 
 @Component({
@@ -12,12 +12,17 @@ export class ResetPasswordComponent implements OnInit {
  
   resetpasswordForm?: FormGroup;
   submitted = false;
- constructor( private authservice :AuthService , private router: Router){ }
+  generateToken : any;
+
+ constructor( private authservice :AuthService , private router: Router, private activatedRoute: ActivatedRoute){ }
   ngOnInit(): void {
    this.resetpasswordForm = new FormGroup({
     password : new FormControl ('', [Validators.required]),
-    newPassword : new FormControl ('', [Validators.required]),
+    // password : new FormControl ('', [Validators.required]),
    });
+   this.activatedRoute.params.subscribe(params => {
+    this.generateToken = params['generateToken']
+  });
   }
 
   resetPass(){
@@ -25,7 +30,15 @@ export class ResetPasswordComponent implements OnInit {
     if(this.resetpasswordForm?.invalid){
       return;
     }
-    this.authservice.resetPassword(this.resetpasswordForm?.value)
-    this.router.navigateByUrl('/login');
+    console.log(this.resetpasswordForm?.value);
+    
+    this.authservice.resetPassword(this.resetpasswordForm?.value, this.generateToken).subscribe((response:any)=>{
+      console.log(response);
+      console.log(this.generateToken);
+      
+      this.router.navigateByUrl('/pages/login');
+    },(error)=>{console.log(error);
+    })
+    
   }
 }
