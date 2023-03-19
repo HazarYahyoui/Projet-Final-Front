@@ -285,6 +285,10 @@ export const navItems: INavData[] = [
         url: '/login'
       },
       {
+        name: 'Logout',
+        url: '/logout'
+      },
+      {
         name: 'Register',
         url: '/register'
       },

@@ -28,4 +28,8 @@ export class AuthService {
     return this.http.post(`http://localhost:3000/resetPass/`+ generateToken, body);
 
   }
+
+  logout(body:any){
+    return this.http.post(`http://localhost:3000/logout`, body);
+  }
 }

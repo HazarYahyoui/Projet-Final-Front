@@ -11,6 +11,7 @@ import { IconModule } from '@coreui/icons-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     Page404Component,
     Page500Component,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
