@@ -13,6 +13,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CardEventComponent } from './events/card-event/card-event.component';
 import { ReservationEventComponent } from './events/reservation-event/reservation-event.component';
 import { DetailsEventComponent } from './events/details-event/details-event.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormModule } from '@coreui/angular';
 
 
 @NgModule({
@@ -31,7 +34,11 @@ import { DetailsEventComponent } from './events/details-event/details-event.comp
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormModule
   ]
 })
 export class HomeModule { }

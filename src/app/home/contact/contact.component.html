@@ -25,30 +25,37 @@
                 <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
                         aria-labelledby="nav-ContactForm-tab">
-                        <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
-                            role="form">
+                        <form *ngIf="contactForm" [formGroup]="contactForm" (ngSubmit)="contact()"class="custom-form contact-form mb-5 mb-lg-0" >
                             <div class="contact-form-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="contact-name" id="contact-name"
-                                            class="form-control" placeholder="Full name" required>
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Full name" formControlName="name" [ngClass]="{'is-valid': submitted && !contactForm.get('name')?.errors ,'is-invalid': submitted && contactForm.get('name')?.errors}">
+                                        <div class="invalid-feedback" *ngIf="submitted && contactForm.get('name')?.hasError('required')">
+                                         Name is required.
+                                        </div>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="email" name="contact-email" id="contact-email"
-                                            pattern="[^ @]*@[^ @]*" class="form-control"
-                                            placeholder="Email address" required>
+                                        <input type="email" name="email" id="email"  class="form-control" placeholder="Email address" formControlName="email" [ngClass]="{'is-valid': submitted && !contactForm.get('email')?.errors ,'is-invalid': submitted && contactForm.get('email')?.errors}">
+                                        <div class="invalid-feedback" *ngIf="submitted && contactForm.get('email')?.hasError('required')">
+                                         Email is required.
+                                        </div>
                                     </div>
                                 </div>
-
-                                <input type="text" name="contact-company" id="contact-company"
-                                    class="form-control" placeholder="Company" required>
-
-                                <textarea name="contact-message" rows="3" class="form-control"
-                                    id="contact-message" placeholder="Message"></textarea>
-
+                                <div>
+                                   <input type="text" name="subject" id="subject" class="form-control" placeholder="subject" formControlName="subject" [ngClass]="{'is-valid': submitted && !contactForm.get('subject')?.errors ,'is-invalid': submitted && contactForm.get('subject')?.errors}">
+                                   <div class="invalid-feedback" *ngIf="submitted && contactForm.get('subject')?.hasError('required')">
+                                     Subject is required.
+                                   </div>
+                                </div>
+                                <div>
+                                   <textarea name="message" rows="3" class="form-control" id="message" placeholder="Message" formControlName="message" [ngClass]="{'is-valid': submitted && !contactForm.get('message')?.errors ,'is-invalid': submitted && contactForm.get('message')?.errors}"></textarea>
+                                   <div class="invalid-feedback" *ngIf="submitted && contactForm.get('message')?.hasError('required')">
+                                     Message is required.
+                                    </div>
+                                </div>
                                 <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                    <button type="submit" class="form-control">Send message</button>
+                                    <button type="submit" class="btn btn-danger">Send message</button>
                                 </div>
                             </div>
                         </form>
