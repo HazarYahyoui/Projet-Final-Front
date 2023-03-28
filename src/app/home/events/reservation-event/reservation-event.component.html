@@ -1,1 +1,105 @@
-<p>reservation-event works!</p>
+<div class="row">
+    <h1 class="text-center text-primary mt-5">Reservation </h1>
+    <form *ngIf="reservationForm" [formGroup]="reservationForm" (ngSubmit)="reserve()"
+        class="offset-md-2 col-md-8 my-5">
+        <div class="row">
+            <div>
+                <div class="mb-3">
+                    <label for="FirstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="FirstName" placeholder="Type the first name here"
+                        formControlName="FirstName"
+                        [ngClass]="{'is-valid': submitted && !reservationForm.get('FirstName')?.errors ,'is-invalid': submitted && reservationForm.get('FirstName')?.errors}">
+                    <div class="invalid-feedback"
+                        *ngIf="submitted && reservationForm.get('FirstName')?.hasError('required')">
+                        First Name is required.
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label"> Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Type the last name here"
+                        formControlName="lastName"
+                        [ngClass]="{'is-valid': submitted && !reservationForm.get('lastName')?.errors ,'is-invalid': submitted && reservationForm.get('lastName')?.errors}">
+                    <div class="invalid-feedback"
+                        *ngIf="submitted && reservationForm.get('lastName')?.hasError('required')">
+                        Last Name is required.
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                    <label for="Email" class="form-label"> Email</label>
+                    <input type="email" class="form-control" id="Email" placeholder="Type the email here"
+                        formControlName="Email"
+                        [ngClass]="{'is-valid': submitted && !reservationForm.get('Email')?.errors ,'is-invalid': submitted && reservationForm.get('Email')?.errors}">
+                    <div class="invalid-feedback"
+                        *ngIf="submitted && reservationForm.get('Email')?.hasError('required')">
+                        Email is required.
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                    <label for="Ticket" class="form-label">Tickets </label>
+                    <div>
+                        <button (click)="addNewTicketGroup()">Add</button>
+                        <button (click)="deleteEmpty()">Delete</button>
+                    </div>
+
+                    <div *ngFor="let ticketGroup of getTickets.controls;let i = index">
+                        <div [formGroupName]="i">
+                            Ticket Number : {{i}}
+                            <div>
+                                <div class="mb-3">
+                                    <label for="reservedFName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="reservedFName" placeholder="Type the first name here"
+                                        formControlName="reservedFName"
+                                        [ngClass]="{'is-valid': submitted && !reservationForm.get('reservedFName')?.errors ,'is-invalid': submitted && reservationForm.get('reservedFName')?.errors}">
+                                    <div class="invalid-feedback"
+                                        *ngIf="submitted && reservationForm.get('reservedFName')?.hasError('required')">
+                                        First Name is required.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="mb-3">
+                                    <label for="reservedLName" class="form-label"> Last Name</label>
+                                    <input type="text" class="form-control" id="reservedLName" placeholder="Type the last name here"
+                                        formControlName="reservedLName"
+                                        [ngClass]="{'is-valid': submitted && !reservationForm.get('reservedLName')?.errors ,'is-invalid': submitted && reservationForm.get('reservedLName')?.errors}">
+                                    <div class="invalid-feedback"
+                                        *ngIf="submitted && reservationForm.get('reservedLName')?.hasError('required')">
+                                        Last Name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-3">
+                                    <label for="reservedEmail" class="form-label"> Email</label>
+                                    <input type="email" class="form-control" id="reservedEmail" placeholder="Type the email here"
+                                        formControlName="reservedEmail"
+                                        [ngClass]="{'is-valid': submitted && !reservationForm.get('reservedEmail')?.errors ,'is-invalid': submitted && reservationForm.get('reservedEmail')?.errors}">
+                                    <div class="invalid-feedback"
+                                        *ngIf="submitted && reservationForm.get('reservedEmail')?.hasError('required')">
+                                        Email is required.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button (click)="deleteTicketsGroup(i)">Delete - {{i}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-save"></i> Reserve
+            </button>
+        </div>
+    </form>
+</div>

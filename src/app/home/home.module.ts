@@ -13,7 +13,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CardEventComponent } from './events/card-event/card-event.component';
 import { ReservationEventComponent } from './events/reservation-event/reservation-event.component';
 import { DetailsEventComponent } from './events/details-event/details-event.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormModule } from '@coreui/angular';
 
@@ -38,7 +38,8 @@ import { FormModule } from '@coreui/angular';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormModule
+    FormModule,
+    
   ]
 })
 export class HomeModule { }

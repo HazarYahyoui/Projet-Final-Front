@@ -11,4 +11,8 @@ export class HomeService {
   Contact(body:any){
     return this.http.post(`http://localhost:3000/contact`, body);
   }
+
+  createReservation(body:any){
+    return this.http.post(`http://localhost:3000/contact`, body);
+  }
 }
